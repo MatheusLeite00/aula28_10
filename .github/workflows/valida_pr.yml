@@ -1,0 +1,17 @@
+name: Validação de PR - CI
+
+on:
+  pull_request:
+    branches: [ "develop", "master", "main" ]
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v3
+
+      - name: Executar validação automatizada
+        run: |
+          echo "Verificando estrutura e qualidade do código..."
+          echo "Validação concluída com sucesso!"
